@@ -11,9 +11,6 @@ int main () {
 	long x;
 	cout << "What number do you want the factorial of? (Max 20)" << endl;
 	cin >> x;
-
-	cout << x << "! = " << factorial(x);
-
-	cout << endl;
+	cout << x << "! = " << factorial(x)<<endl;
 	return 0;
 }
