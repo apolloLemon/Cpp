@@ -7,9 +7,9 @@ int pwr (int a, int b) {
 }
 
 int main () {
-	const unsigned int power = 4;
+	const unsigned int power = 3;
 	unsigned int max = 100;
-	cout << "Check (x^n)+(y^n)=2(z^n) with n>2 <=> x=y=z for x,y,z between 1 and ";
+	cout << "Check (x^3)+(y^3)=2(z^3) <=> x=y=z for x,y,z between 1 and ";
 	cin >> max;
 	for(unsigned int i=1;i<=max;i++){
 		for(unsigned int j=i;j<=max;j++) {
