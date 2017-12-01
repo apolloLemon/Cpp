@@ -7,33 +7,22 @@ const unsigned int Y = 1999;
 const string name = "Valentin";
 
 bool bisex (int y) {
-	if(y%400==0){
-		return 1;
-	} else if (y%4==0 && y%100!=0){
-		return 1;
-	}
+	if(y%400==0)return 1;
+	else if (y%4==0 && y%100!=0) return 1;
 	return 0;
 }
 
 int monthlen (unsigned int m, int y) {
-	if (m==2) {
-		return 28+bisex(y);
-	} else if (m<8 && m%2!=0) {
-		return 31;
-	} else if (m>=8 && m%2==0){
-		return 31;
-	}
+	if (m==2) return 28+bisex(y);
+	else if (m<8 && m%2!=0) return 31;
+	else if (m>=8 && m%2==0) return 31;
 	return 30;
 }
 
 int dayzfromzero (int d, int m, int y) {
 	int dayz = d;
-	for(int i=0;i<=y;i++){
-		dayz+=365+bisex(i);
-	}
-	for(int i=1;i<=m;i++){
-		dayz+=monthlen(i,y);
-	}
+	for(int i=0;i<=y;i++) dayz+=365+bisex(i);
+	for(int i=1;i<=m;i++) dayz+=monthlen(i,y);
 	return dayz;
 }
 
