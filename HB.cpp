@@ -39,9 +39,8 @@ int main () {
     int m = now->tm_mon+1;
     int d = now->tm_mday;
     int age = y-Y;
-    if (d==D && m==M) {
-    	cout<<"\n--===:: Happy "<<age<<"th Birthday "<<name<<"!! ::===--\n\n";
-    } else {
+    if (d==D && m==M) cout<<"\n--===:: Happy "<<age<<"th Birthday "<<name<<"!! ::===--\n\n";
+    else {
     	if(m==12) {
 	    	cout<<"\n I hope you had a happy birthday :)";
 	    	if (d>15) cout<<" It's xMas soon!";
