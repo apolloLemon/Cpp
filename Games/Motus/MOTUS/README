@@ -1,0 +1,18 @@
+....//...//.....////..//////..//..//....///....//
+...//|..//|...//..//...//....//..//...//.//...//
+..//||.//||..//..//...//....//..//....||.....//
+.//.||//.||.//..//...//....//..//..//.||...._
+//..||/..||.////....//.....////....////....//
+
+MOTUS! UK-English 8 char version (no accents)
+
+Guess an eight letter word, using correct letters as clues: you are given a list of your correct letters and the position of those in the right place. For example:
+
+Word to guess:	increase
+Player guess: 	imported
+Correct:		i-------
+misplaced:		re
+
+All the words are stored in motus_eight.dic
+
+...you could use try using grep.
