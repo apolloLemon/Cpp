@@ -4,7 +4,11 @@
 .//.||//.||.//..//...//....//..//..//.||...._
 //..||/..||.////....//.....////....////....//
 
-MOTUS! UK-English 8 char version (no accents)
+MOTUS!!!
+for Linux and Windows!
+
+Availiable Modes:
+UK-English 8 char (no accents words)
 
 Guess an eight letter word, using correct letters as clues: you are given a list of your correct letters and the position of those in the right place. For example:
 
@@ -13,6 +17,6 @@ Player guess: 	imported
 Correct:		i-------
 misplaced:		re
 
-All the words are stored in motus_eight.dic
+All the words are stored in .dic files
 
 ...you could use try using grep.
