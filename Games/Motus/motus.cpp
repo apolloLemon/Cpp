@@ -4,7 +4,7 @@
 using namespace std;
 
 #include <array>
-const unsigned int BUFF = 12000;
+const unsigned int BUFF = 14600;
 using strings = array<string, BUFF>;
 
 struct array_dic {
@@ -13,7 +13,7 @@ struct array_dic {
 };
 
 bool in_array_dic (string e, array_dic D);
-array_dic load_array_dic (string dictionary);
+array_dic load_array_dic (string dictionary, int wordsize);
 bool leq_string (string a, string b, int ltr);
 string get_word_of_size (int size, array_dic dic);
 bool are_all_char (string a, int b);
@@ -30,7 +30,7 @@ int main() {
 	const int wordsize = 8;
 
 	array_dic motus_dic;
-	motus_dic = load_array_dic("motus_eight.dic");
+	motus_dic = load_array_dic("en_n.motus",wordsize);
 
 	string a,b;
 	a = motus_dic.D[rand()%motus_dic.size];
@@ -48,6 +48,7 @@ int main() {
 }
 
 string get_word_of_size (int size, array_dic dic) {
+	std::cout << "get_word\n";
 	string out = "0";
 	while(out.length()!=size || !are_all_char(out, out.length()) || !in_array_dic(out, dic)){
 		cout << "Enter a word "<<size<<" characters long:\n";
@@ -109,17 +110,18 @@ string misplaced_letters (string a, string b) {
 }
 
 //Dictionary Code
-array_dic load_array_dic (string dictionary){
+array_dic load_array_dic (string dictionary, int wordsize){
+	std::cout << "loading dictionary";
 	array_dic out;
 	char word[9];
 	ifstream read; read.open(dictionary);
 	out.size = 0;
 	while(read){
-		read.getline(word, 9);
+		read.getline(word, wordsize+1);
 		out.D[out.size++]=word;
 	}
 
-
+	std::cout << " completed\n";
 	return out;
 }
 
@@ -131,6 +133,7 @@ bool leq_string (string a, string b, int ltr){
 }
 
 bool inArray_rec (string e, strings D, int i, int j) {
+	std::cout << "looking in between"<<i<<" and "<<j<<" ... \n";
 	if(e==D[i]) return 1;
 	if(i==j-1) return 0;
 
@@ -140,5 +143,6 @@ bool inArray_rec (string e, strings D, int i, int j) {
 }
 
 bool in_array_dic (string e, array_dic Dic) {
+	std::cout << "looking for word in dic\n";
 	return inArray_rec(e,Dic.D,0,Dic.size);
 }
