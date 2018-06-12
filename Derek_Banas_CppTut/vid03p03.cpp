@@ -11,7 +11,7 @@ int main (){
 	std::cout << "Intrest Rate : "; std::cin >> rate;
 	rate *= .01;
 
-	for(auto x: Range(1,10,1))
+	for(auto x: Range(1,10,1)) //made to look like python for loop
 		invest+=(invest*rate);
 
 	std::cout << "Value after 10 years : "<<invest<<std::endl;
