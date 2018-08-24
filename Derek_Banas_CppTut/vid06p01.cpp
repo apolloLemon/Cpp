@@ -1,7 +1,10 @@
 #include <iostream>
 #include <vector>
 
-std::string VectorToString(std::vector<std::string> Customers, char separator);
+//Problem solution by meLon
+std::string VectorToString(
+	std::vector<std::string> Customers, 
+	char separator);
 
 int main () {
 	std::vector<std::string> vCusts(3);
@@ -18,5 +21,5 @@ std::string VectorToString(std::vector<std::string> Customers, char separator){
 	for(auto x: Customers)
 		out += x + separator;
 
-	return out;
+	return out; //Derek's solution is identical
 }
