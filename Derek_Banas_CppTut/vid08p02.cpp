@@ -4,7 +4,10 @@ int fib(int a);
 
 int main(){
 
-	for(int i=0;i<10;i++){
+	int index;
+	std::cout << "Get Fibonacci Index : "; std::cin >> index;
+
+	for(int i=0;i<=index;i++){
 		std::cout << fib(i) << " ";
 	}
 
