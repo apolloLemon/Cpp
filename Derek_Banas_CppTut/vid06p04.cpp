@@ -22,18 +22,22 @@ std::string CeasarCipher (std::string str, int change, bool direction) {
 	int dir = direction*2-1;
 
 	for(int i=0; i<str.size();i++) {
-		std::cout<<str[i]<<std::endl;
+	//for(char& c:str)
+		
 		if(isalpha(str[i])){
 			
+			//char p = (islower(c)) ? 'a' : 'A';
 			char p = (islower(str[i])) ? 'a' : 'A';
+			//char cc = (int)c - p;
 			int cc = (int)str[i] -p;
 			
 			cc = (( cc + change*dir ) % 26);
 			if (cc<0) cc=26+cc;
 			
+			//c = (char)(cc+p);
 			out = out+(char)(cc+p);
 
-		} else if (isspace(str[i])) out = out+' ';
+		} else if (isspace(str[i])) out = out+' '; //not needed
 	}
-	return out;
+	return out;//str
 }
