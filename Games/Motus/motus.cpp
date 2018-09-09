@@ -32,8 +32,9 @@ int main() {
 	array_dic motus_dic;
 	motus_dic = load_array_dic("en_n.motus",wordsize);
 
-	string a,b;
+	string a,b,c;
 	a = motus_dic.D[rand()%motus_dic.size];
+	//a = get_word_of_size(wordsize, motus_dic); cout << flush;
 
 	int attempt=0;
 	while(!equal_strings(a,b,wordsize) && attempt<12){
@@ -48,7 +49,7 @@ int main() {
 }
 
 string get_word_of_size (int size, array_dic dic) {
-	std::cout << "get_word\n";
+	cout << "get_word\n";
 	string out = "0";
 	while(out.length()!=size || !are_all_char(out, out.length()) || !in_array_dic(out, dic)){
 		cout << "Enter a word "<<size<<" characters long:\n";
@@ -111,7 +112,7 @@ string misplaced_letters (string a, string b) {
 
 //Dictionary Code
 array_dic load_array_dic (string dictionary, int wordsize){
-	std::cout << "loading dictionary";
+	cout << "loading dictionary";
 	array_dic out;
 	char word[9];
 	ifstream read; read.open(dictionary);
@@ -121,7 +122,7 @@ array_dic load_array_dic (string dictionary, int wordsize){
 		out.D[out.size++]=word;
 	}
 
-	std::cout << " completed\n";
+	cout << " completed\n";
 	return out;
 }
 
@@ -133,7 +134,7 @@ bool leq_string (string a, string b, int ltr){
 }
 
 bool inArray_rec (string e, strings D, int i, int j) {
-	std::cout << "looking in between"<<i<<" and "<<j<<" ... \n";
+	cout << "looking in between "<<i<<" and "<<j<<" ... \n";
 	if(e==D[i]) return 1;
 	if(i==j-1) return 0;
 
@@ -143,6 +144,6 @@ bool inArray_rec (string e, strings D, int i, int j) {
 }
 
 bool in_array_dic (string e, array_dic Dic) {
-	std::cout << "looking for word in dic\n";
+	cout << "looking for word in dic\n";
 	return inArray_rec(e,Dic.D,0,Dic.size);
 }
